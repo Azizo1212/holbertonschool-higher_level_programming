@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+"""class Square."""
+
+
 class Square:
     """Represents a square.
-    Private instance attribute
-    """
+    Private instance attribute"""
 
     def __init__(self, size=0):
-        """class Square."""
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
