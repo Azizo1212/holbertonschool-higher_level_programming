@@ -37,9 +37,7 @@ Testing Emty args Raise Error
 
 Testing  not int variable for b
     >>> add_integer(4, "School")
-    Traceback (most r Testing A float Return int
-    >>> add_integer(100.3, -2)
-    98ecent call last):
+    Traceback (most recent call last):
     ...
     TypeError: b must be an integer
 
