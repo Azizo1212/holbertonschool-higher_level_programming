@@ -38,8 +38,8 @@ Testing Emty args Raise Error
 Testing  not int variable for b
     >>> add_integer(4, "School")
     Traceback (most r Testing A float Return int
-35     >>> add_integer(100.3, -2)
-36     98ecent call last):
+    >>> add_integer(100.3, -2)
+    98ecent call last):
     ...
     TypeError: b must be an integer
 
@@ -57,12 +57,12 @@ Testing with more than 2 args
 
 Testing float  overflow
     >>> add_integer(1, float('inf'))
-	Traceback (most recent call last):
-	...
-	OverflowError: cannot convert float infinity to integer
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
 
 Testing Nan
-	 >>> add_integer(1, float('nan'))
-	 Traceback (most recent call last):
-	 ...
-	 ValueError: cannot convert float NaN to integer
+    >>> add_integer(1, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
