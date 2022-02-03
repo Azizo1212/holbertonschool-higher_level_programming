@@ -13,6 +13,6 @@ class BaseGeometry():
             raise TypeError('{} must be an integer'.format(name))
 
         elif value <= 0:
-            raise TypeError('{} must be greater than 0'.format(name))
+            raise ValueError('{} must be greater than 0'.format(name))
         else:
             self.value = value
