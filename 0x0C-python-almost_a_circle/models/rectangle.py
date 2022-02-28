@@ -91,3 +91,11 @@ class Rectangle(Base):
                                                         self.__y,
                                                         self.__width,
                                                         self.__height))
+
+    def update(self, *args):
+        """     """
+        self.id = f_arg
+        kwargs = (self.__width, self.__height, self.__x, self.__y)
+        for arg in argv:
+            if arg is not None:
+                kwargs 
