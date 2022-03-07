@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """import base  """
-from .base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -8,7 +8,6 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """  ,jhgfkhtdf      """
-
         self.width = width
         self.height = height
         self.x = x
@@ -65,7 +64,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-<<<<<<< HEAD
+
     def update(self, *args):
         """ Update """
         i = 0
@@ -111,9 +110,16 @@ class Rectangle(Base):
 
     def update(self, *args):
         """     """
-        self.id = f_arg
-        kwargs = (self.__width, self.__height, self.__x, self.__y)
-        for arg in argv:
-            if arg is not None:
-                kwargs 
->>>>>>> 6330b1a53821fa74b57708919a231408266f75b2
+        i = 0
+        for arg in args:
+            if i == 0:
+               self.id = arg
+            if i == 1:
+                self.width = arg
+            if i == 2:
+                self.height = arg
+            if i == 3:
+                self.x = arg
+            if i == 4:
+                self.y = arg
+            i += 1
