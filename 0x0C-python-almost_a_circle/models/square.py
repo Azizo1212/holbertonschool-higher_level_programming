@@ -24,7 +24,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """ update """
+        """ Update """
         i = 0
         if args:
             for arg in args:
@@ -37,3 +37,6 @@ class Square(Rectangle):
                 if i == 3:
                     self.y = arg
                 i += 1
+        else:
+            for arg in kwargs:
+                setattr(self, arg, kwargs.get(arg))
