@@ -15,10 +15,10 @@ if __name__ == '__main__':
 
     curso = db.cursor()
     cur.execute("SELECT cities.name\
-                FROM cities JOIN states\
-                ON cities.states.id = state_id\
-                WHERE states.name LIKE %s\
-                ORDER BY cities.id", (sys.argv[4],))
+                FROM cities LEFT JOIN states\
+                ON states.id = cities.state_id\
+                WHERE states.name = %s\
+                ORDER BY cities.id ASC", (sys.argv[4],))
 
     rows = cur.fetchall()
     print(", ".join([row[0] for row in rows]))
