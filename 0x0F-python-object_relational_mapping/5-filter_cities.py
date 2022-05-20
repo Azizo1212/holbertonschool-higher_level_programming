@@ -14,8 +14,9 @@ if __name__ == '__main__':
             db=sys.argv[3])
 
     curso = db.cursor()
-    curso.execute("SELECT  cities.id, cities.name, states.name\
-                FROM cities INNER JOIN states ON cities.state_id=states.id", (sys.argv[4],))
+    curso.execute("SELECT cities.name FROM cities \
+    JOIN states ON cities.state_id = states.id WHERE states.name LIKE %s \
+    ORDER BY cities.id", (sys.argv[4],))
 
     rows = cursor.fetchall()
 
