@@ -11,13 +11,13 @@ if __name__ == '__main__':
             port=3306,
             user=sys.argv[1],
             passwd=sys.argv[2],
-            db=sys.argv[3],
-            state=sys.argv[4]
+            db=sys.argv[3]
 
-    curso = db.cursor()
-    curso.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
-                   ORDER BY states.id ASC""".format(sys.argv[4]))
+    cursor = db.cursor()
+    cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
+                   ORDER BY states.id ASC""")
 
-    rows = curso.fetchall()
+    cursor = cursor.format(argv[4])
+    rows = cursor.fetchall()
     for row in rows:
         print(row)
