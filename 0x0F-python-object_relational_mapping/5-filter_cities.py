@@ -18,8 +18,8 @@ if __name__ == '__main__':
                 FROM cities INNER JOIN states ON cities.state_id=states.id", (sys.argv[4],))
 
     rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+
+
     print(", ".join([row[0] for row in rows]))
     cursor.close()
     db.close()
