@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     curso = db.cursor()
     curso.execute("SELECT cities.name\
-                FROM cities LEFT JOIN states\
+                FROM cities JOIN states\
                 ON states.id = cities.state_id\
                 WHERE states.name = %s\
                 ORDER BY cities.id ASC", (sys.argv[4],))
@@ -25,6 +25,7 @@ if __name__ == '__main__':
     for row in cities:
         i.append(row[0])
     print(", ".join(i))
+
 
     curso.close()
     db.close()
