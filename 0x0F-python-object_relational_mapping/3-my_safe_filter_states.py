@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     curso = db.cursor()
     curso.execute("SELECT * FROM states WHERE name = %s
-                ORDER BY states.id ASC".format(sys.argv[4]))
+                ORDER BY states.id ASC", (sys.argv[4],))
 
     rows = curso.fetchall()
     for row in rows:
