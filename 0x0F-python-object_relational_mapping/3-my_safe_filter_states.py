@@ -14,7 +14,7 @@ if __name__ == '__main__':
             db=sys.argv[3])
 
     curso = db.cursor()
-    curso.execute("SELECT * FROM states WHERE name = %s
+    curso.execute("SELECT * FROM states WHERE name=%s\
                 ORDER BY states.id ASC", (sys.argv[4],))
 
     rows = curso.fetchall()
