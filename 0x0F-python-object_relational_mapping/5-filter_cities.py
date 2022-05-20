@@ -22,5 +22,5 @@ if __name__ == '__main__':
         print(row)
     print(", ".join([row[0] for row in rows]))
     cursor.close()
-    database.close()
+    db.close()
 
