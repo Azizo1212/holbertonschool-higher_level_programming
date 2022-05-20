@@ -15,9 +15,8 @@ if __name__ == '__main__':
             charset="utf8"
 
     cursor = db.cursor()
-    search = sys.argv[4]
     cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
-                   ORDER BY states.id ASC""".format(search))
+                   ORDER BY states.id ASC""".format(sys.argv[4]))
 
     cursor = cursor.format(argv[4])
     rows = cursor.fetchall()
