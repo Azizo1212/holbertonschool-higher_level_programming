@@ -14,7 +14,7 @@ if __name__ == '__main__':
             db=sys.argv[3])
 
     curso = db.cursor()
-    cur.execute("SELECT cities.name\
+    curso.execute("SELECT cities.name\
                 FROM cities LEFT JOIN states\
                 ON states.id = cities.state_id\
                 WHERE states.name = %s\
