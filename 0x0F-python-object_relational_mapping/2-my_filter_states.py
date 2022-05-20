@@ -15,7 +15,7 @@ if __name__ == '__main__':
             name_searched=sys.argv[4]
 
     cursor = db.cursor()
-    cursor.execute("""SELECT * FROM states WHERE states.name LIKE '%{:s}%'
+    cursor.execute("""SELECT * FROM states WHERE states.name LIKE BINARY '{}'\
                    ORDER BY states.id ASC""".format(sys.argv[4]))
 
     rows = cursor.fetchall()
