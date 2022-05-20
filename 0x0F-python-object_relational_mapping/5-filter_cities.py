@@ -17,7 +17,7 @@ if __name__ == '__main__':
     cur.execute("SELECT cities.name\
                 FROM cities JOIN states\
                 ON cities.states.id = state_id\
-                WHERE states.name = %s\
+                WHERE states.name LIKE %s\
                 ORDER BY cities.id", (sys.argv[4],))
 
     rows = cur.fetchall()
