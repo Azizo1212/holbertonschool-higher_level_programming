@@ -12,14 +12,13 @@ if __name__ == '__main__':
             user=sys.argv[1],
             passwd=sys.argv[2],
             db=sys.argv[3],
+            input=sys.argv[4],
             charset="utf8"
 
     cursor = db.cursor()
     cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
-                   ORDER BY states.id ASC""".format(sys.argv[4]))
+                   ORDER BY states.id ASC""".format(input))
 
-    cursor = cursor.format(argv[4])
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-
