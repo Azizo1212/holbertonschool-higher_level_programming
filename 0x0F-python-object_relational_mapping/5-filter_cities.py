@@ -4,7 +4,7 @@
 if __name__ == '__main__':
 
     import MySQLdb
-    from sys import argv
+    import sys
 
     db = MySQLdb.connect(host='localhost'
                          port=3306,
@@ -20,6 +20,7 @@ if __name__ == '__main__':
 
     rows = curso.fetchall()
     new = 0
+
     for woof in row:
         if new != 0:
             print(", ", end="")
