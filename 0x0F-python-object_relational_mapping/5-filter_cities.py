@@ -18,7 +18,13 @@ if __name__ == '__main__':
                 WHERE states.name = %s ORDER BY cities.id", (sys.argv[4], ))
 
     rows = curso.fetchall()
-    print(", ".join([row[0] for row in rows]))
+    new = 0
+    for i in row:
+        if new != 0:
+            print(", ", end="")
+        print("%s" % i, end="")
+        new = new + 1
+    print("")
 
     curso.close()
     db.close()
