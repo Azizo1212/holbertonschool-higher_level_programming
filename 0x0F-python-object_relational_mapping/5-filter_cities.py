@@ -15,14 +15,15 @@ if __name__ == '__main__':
     curso = db.cursor()
     curso.execute("SELECT cities.name FROM cities\
                 INNER JOIN states ON cities.state_id = states.id\
-                WHERE states.name = %s ORDER BY cities.id", (sys.argv[4], ))
+                WHERE states.name = %s ORDER BY cities.id",
+                (sys.argv[4], ))
 
     rows = curso.fetchall()
     new = 0
-    for i in row:
+    for woof in row:
         if new != 0:
             print(", ", end="")
-        print("%s" % i, end="")
+        print("%s" % woof, end="")
         new = new + 1
     print("")
 
