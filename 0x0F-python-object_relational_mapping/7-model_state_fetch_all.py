@@ -7,6 +7,7 @@ if __name__ == "__main__":
     from model_state import Base, State
     from sqlalchemy import create_engine
     from sqlalchemy.orm import Session
+    from sys import argv, exit
 
     user = argv[1]
     passwd = argv[2]
