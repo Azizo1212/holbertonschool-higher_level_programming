@@ -12,13 +12,13 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3])
 
-    curso = db.cursor()
-    curso.execute("SELECT cities.name FROM cities\
+    cursor = db.cursor()
+    cursor.execute("SELECT cities.name FROM cities\
                 INNER JOIN states ON cities.state_id = states.id\
                 WHERE states.name = %s ORDER BY cities.id",
                 (argv[4], ))
 
-    rows = curso.fetchall()
+    rows = cursor.fetchall()
     new = 0
 
     for woof in row:
@@ -28,5 +28,5 @@ if __name__ == '__main__':
         new = new + 1
     print("")
 
-    curso.close()
+    cursor.close()
     db.close()
