@@ -22,5 +22,5 @@ if __name__ == "__main__":
     x = '%a%'
     new = session.query(State.name.like(x)).order_by(State.id)
 
-        print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(new.id, new.name))
     session.close()
