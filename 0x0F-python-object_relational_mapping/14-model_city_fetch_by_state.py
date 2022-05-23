@@ -9,6 +9,7 @@ if __name__ == "__main__":
     from sqlalchemy.orm import Session
     from sys import argv, exit
     from model_city import City
+    from sqlalchemy.schema import Table
 
     user = argv[1]
     passwd = argv[2]
@@ -21,7 +22,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    for state, city in session.query(State, City).filter(City.state_id == State.id)\
+    for state, city in session.query(State, City)\
+                              .filter(City.state_id == State.id)\
                               .order_by(City.id).all():
 
         print("{}: {()} {}".format(state.name, city.id, city.name))
