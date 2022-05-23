@@ -19,7 +19,8 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     session = Session(engine)
-    new = session.query(State.id, State.name).first()
+    x = '%a%'
+    new = session.query(State.id.like(x), State.name).first()
         if ('a' in state.name):
             print("{}: {}".format(state.id, state.name))
     session.close()
