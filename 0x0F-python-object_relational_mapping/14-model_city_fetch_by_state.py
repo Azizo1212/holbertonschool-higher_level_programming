@@ -9,7 +9,6 @@ if __name__ == "__main__":
     from sqlalchemy.orm import Session
     from sys import argv, exit
     from model_city import City
-    from sqlalchemy.schema import Table
 
     user = argv[1]
     passwd = argv[2]
@@ -26,5 +25,5 @@ if __name__ == "__main__":
                               .filter(City.state_id == State.id)\
                               .order_by(City.id).all():
 
-        print("{}: {()} {}".format(state.name, city.id, city.name))
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()
