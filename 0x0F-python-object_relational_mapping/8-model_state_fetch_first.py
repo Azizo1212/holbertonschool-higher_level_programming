@@ -23,5 +23,5 @@ if __name__ == "__main__":
     if new is None:
         print("Nothing")
     else:
-        print("{}: {}".format(new[0], new[1]))
+        print("{}: {}".format(new.id, new.name))
     session.close()
