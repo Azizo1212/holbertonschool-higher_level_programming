@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import urllib.request
+# fetches URL
 
+import urllib.request
 
 with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
    print("Body response:")
