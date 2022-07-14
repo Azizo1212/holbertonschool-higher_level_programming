@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user"""
+"""takes in a letter and sends a POST request"""
 
 import requests
 import sys
